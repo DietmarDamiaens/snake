@@ -1,0 +1,2 @@
+\\Festina.edu.adm.local\Thomas.langeveld$\Downloads\agariosharp-master (1)\agariosharp-master\AgarioSharp\obj\Debug\AgarioLib.csprojAssemblyReference.cache
+\\Festina.edu.adm.local\Thomas.langeveld$\Downloads\agariosharp-master (1)\agariosharp-master\AgarioSharp\obj\Debug\AgarioLib.csproj.CoreCompileInputs.cache
