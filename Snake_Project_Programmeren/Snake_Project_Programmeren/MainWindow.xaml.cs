@@ -20,6 +20,7 @@ namespace Snake_Project_Programmeren
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace Snake_Project_Programmeren
         private void Makkelijk_Click(object sender, RoutedEventArgs e)
         {
             Makkelijk objMakkelijk = new Makkelijk();
-            objMakkelijk.Show();
+            objMakkelijk.Show();
+
         }
 
         private void Normaal_Click(object sender, RoutedEventArgs e)
@@ -42,5 +44,7 @@ namespace Snake_Project_Programmeren
             Moeilijk objMoeilijk = new Moeilijk();
             objMoeilijk.Show();
         }
+
+
     }
 }

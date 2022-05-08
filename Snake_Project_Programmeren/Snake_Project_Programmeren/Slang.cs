@@ -22,13 +22,10 @@ namespace Snake_Project_Programmeren
         //variabelen
 
         Canvas _canvas = new Canvas();
-        private int _diameter, _x, _y, _richtingsgetal;
-        Random objrandom = new Random(Guid.NewGuid().GetHashCode());
+        private int _diameter, _x, _y;
         Rectangle objrectangle = new Rectangle();
-        private string _richting;
         bool _geraakt;
-        const int _pasgrootte = 5;
-        DispatcherTimer _tmrbewegen = new DispatcherTimer();
+        const int _pasgrootte = 20;
 
         //constructor
 
@@ -38,10 +35,10 @@ namespace Snake_Project_Programmeren
             _diameter = 10;
             objrectangle.Width = _diameter;
             objrectangle.Height = _diameter;
-            _x = objrandom.Next(0, Convert.ToInt32(_canvas.Width - _diameter));
-            _y = objrandom.Next(0, Convert.ToInt32(_canvas.Height - _diameter));
+            _x = Convert.ToInt32(_canvas.Width / 2);
+            _y = Convert.ToInt32(_canvas.Height / 2);
             objrectangle.Margin = new Thickness(_x, _y, 0, 0);
-            objrectangle.Fill = new SolidColorBrush(Colors.Black);
+            objrectangle.Fill = new SolidColorBrush(Colors.Blue);
             objrectangle.Stroke = new SolidColorBrush(Colors.Black);
             _canvas.Children.Add(objrectangle);
         }
@@ -86,6 +83,27 @@ namespace Snake_Project_Programmeren
         }
 
         //methoden
+
+        public void Naarrechts()
+        {
+            _x = _x + _pasgrootte;
+            objrectangle.Margin = new Thickness(_x, _y, 0, 0);
+        }
+        public void Naarlinks()
+        {
+            _x = _x - _pasgrootte;
+            objrectangle.Margin = new Thickness(_x, _y, 0, 0);
+        }
+        public void Naaronder()
+        {
+            _y = _y + _pasgrootte;
+            objrectangle.Margin = new Thickness(_x, _y, 0, 0);
+        }
+        public void Naarboven()
+        {
+            _y = _y - _pasgrootte;
+            objrectangle.Margin = new Thickness(_x, _y, 0, 0);
+        }
 
     }
 }

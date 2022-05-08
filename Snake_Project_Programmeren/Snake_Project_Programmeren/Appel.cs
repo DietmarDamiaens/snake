@@ -21,12 +21,11 @@ namespace Snake_Project_Programmeren
     {
         //declaratie
 
-        bool appelaanwezig = false;
         int intmaphoogte, intmapbreedte, _xappel, _yappel, intappeldiameter;
         Canvas _canvas = new Canvas();
         Ellipse objappel = new Ellipse();
-        Random objrandom = new Random();
         DispatcherTimer _tmrcontrole = new DispatcherTimer();
+        Random objrandom = new Random(Guid.NewGuid().GetHashCode());
 
         //conctructor
         public Appel(Canvas pcanvas)
@@ -36,8 +35,9 @@ namespace Snake_Project_Programmeren
             intmaphoogte = Convert.ToInt32(_canvas.Height);
             intmapbreedte = Convert.ToInt32(_canvas.Width);
 
-            _xappel = objrandom.Next(intmapbreedte - intappeldiameter);
-            _yappel = objrandom.Next(intmapbreedte - intappeldiameter);
+            _xappel = objrandom.Next(0, intmapbreedte - intappeldiameter);
+            _yappel = objrandom.Next(0, intmaphoogte - intappeldiameter);
+            intappeldiameter = 10;
 
             objappel.Margin = new Thickness(_xappel, _yappel, 0, 0);
             objappel.Fill = new SolidColorBrush(Colors.Red);
@@ -45,7 +45,6 @@ namespace Snake_Project_Programmeren
             objappel.Width = intappeldiameter;
             objappel.Stroke = new SolidColorBrush(Colors.Black);
             _canvas.Children.Add(objappel);
-            appelaanwezig = true;
 
         }
 
@@ -68,5 +67,13 @@ namespace Snake_Project_Programmeren
         }
 
         //methoden
+
+        public void Opgegeten(Slang objslang)
+        {
+
+        }
+
+
+
     }
 }

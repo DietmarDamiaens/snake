@@ -19,9 +19,39 @@ namespace Snake_Project_Programmeren
     /// </summary>
     public partial class Makkelijk : Window
     {
+        Slang objslang;
+        Appel objappel;
+
         public Makkelijk()
         {
             InitializeComponent();
+            objslang = new Slang(cnvcanvas);
+            objappel = new Appel(cnvcanvas);
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left)
+            {
+                objslang.Naarlinks();
+            }
+            if (e.Key == Key.Right)
+            {
+                objslang.Naarrechts();
+            }
+            if (e.Key == Key.Up)
+            {
+                objslang.Naarboven();
+            }
+            if (e.Key == Key.Down)
+            {
+                objslang.Naaronder();
+            }
+        }
+
+        private void checkbotsingen(object sender, EventArgs e)
+        {
+            objappel.Opgegeten(objslang);
         }
     }
 }

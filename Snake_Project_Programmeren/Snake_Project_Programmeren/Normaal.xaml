@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Normaal" Height="450" Width="800">
     <Grid>
-        
+        <Canvas x:Name="cnvcanvas" Background="#FF85D875" Width="800" Height="434"/>
+
     </Grid>
 </Window>
