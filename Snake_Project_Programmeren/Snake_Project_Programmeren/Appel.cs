@@ -24,7 +24,6 @@ namespace Snake_Project_Programmeren
         int intmaphoogte, intmapbreedte, _xappel, _yappel, intappeldiameter;
         Canvas _canvas = new Canvas();
         Ellipse objappel = new Ellipse();
-        DispatcherTimer _tmrcontrole = new DispatcherTimer();
         Random objrandom = new Random(Guid.NewGuid().GetHashCode());
 
         //conctructor
@@ -70,7 +69,11 @@ namespace Snake_Project_Programmeren
 
         public void Opgegeten(Slang objslang)
         {
-
+            if(objslang.X == _xappel && objslang.Y == _yappel)
+            {
+                objappel.Margin = new Thickness(_xappel, _yappel, 0, 0);
+                _canvas.Children.Add(objappel);
+            }
         }
 
 

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Snake_Project_Programmeren
 {
@@ -21,12 +22,16 @@ namespace Snake_Project_Programmeren
     {
         Slang objslang;
         Appel objappel;
+        DispatcherTimer _tmrbotsingen = new DispatcherTimer();
 
         public Makkelijk()
         {
             InitializeComponent();
             objslang = new Slang(cnvcanvas);
             objappel = new Appel(cnvcanvas);
+            _tmrbotsingen.Interval = TimeSpan.FromMilliseconds(1);
+            _tmrbotsingen.Start();
+            _tmrbotsingen.Tick += checkbotsingen;
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)

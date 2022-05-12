@@ -30,19 +30,21 @@ namespace Snake_Project_Programmeren
         {
             Makkelijk objMakkelijk = new Makkelijk();
             objMakkelijk.Show();
-
+            this.Close();
         }
 
         private void Normaal_Click(object sender, RoutedEventArgs e)
         {
             Normaal objNormaal = new Normaal();
             objNormaal.Show();
+            this.Close();
         }
 
         private void Moeilijk_Click(object sender, RoutedEventArgs e)
         {
             Moeilijk objMoeilijk = new Moeilijk();
             objMoeilijk.Show();
+            this.Close();
         }
 
 
